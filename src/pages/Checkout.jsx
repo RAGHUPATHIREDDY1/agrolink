@@ -62,7 +62,7 @@ function Checkout() {
           </div>
           {message && <p className="text-sm text-emerald-700">{message}</p>}
           <button type="submit" className="w-full rounded-full bg-emerald-700 px-5 py-3 text-white transition hover:bg-emerald-800">
-            Place order ₹{getTotal}
+            Place order ₹{typeof getTotal === 'function' ? getTotal() : getTotal}
           </button>
         </form>
 
@@ -81,7 +81,7 @@ function Checkout() {
             <div className="rounded-3xl bg-white p-4">
               <div className="flex items-center justify-between text-slate-700">
                 <span>Total</span>
-                <span className="font-semibold">₹{getTotal}</span>
+                <span className="font-semibold">₹{typeof getTotal === 'function' ? getTotal() : getTotal}</span>
               </div>
             </div>
           </div>

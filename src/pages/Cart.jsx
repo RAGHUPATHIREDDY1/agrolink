@@ -54,7 +54,7 @@ function Cart() {
             <div className="mt-6 space-y-4">
               <div className="flex items-center justify-between text-sm text-emerald-100/80">
                 <span>Products total</span>
-                <span>{cartItems[0]?.currency || 'USD'} {getTotal}</span>
+                <span>{cartItems[0]?.currency || 'USD'} {typeof getTotal === 'function' ? getTotal() : getTotal}</span>
               </div>
               <div className="rounded-3xl bg-white/10 p-5 text-sm">
                 <p className="font-medium">Ready to place order?</p>
